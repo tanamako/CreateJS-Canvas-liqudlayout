@@ -1,0 +1,42 @@
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>CanvasLiqudLayout</title>
+<meta name="description" content="CanvasLiqudLayout">
+<link rel="stylesheet" href="style.css">
+<script src="http://code.createjs.com/easeljs-0.8.1.min.js"></script>
+<script src="http://code.createjs.com/tweenjs-0.6.1.min.js"></script>
+<script src="http://code.createjs.com/movieclip-0.8.1.min.js"></script>
+<script src="http://code.createjs.com/preloadjs-0.6.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="create.js"></script>
+</head>
+<body>
+<div class="p-header js-header u-center">
+  <img src="logo.png" alt="ロゴ">
+</div>
+<div class="p-loading-tutorial">
+	<div class="p-loading-tutorial__inner">
+    <img src="loading.gif" alt="" width="20">
+		<p class="p-loading-tutorial-text">読み込み中...</p>
+	</div>
+</div>
+<a href="/" class="u-block">
+  <div class="js-box p-box">
+    <div class="js-box__inner p-box__inner">
+      <canvas id="canvas" width="640" height="810"></canvas>
+    </div>
+  </div>
+</a>
+<script src="canvasLiqudLayout.js"></script>
+<script>
+  $(document).ready(function() {
+    var LOAD_WAIT_TIME = 800;
+    setTimeout(function(){
+      window.lp_init();
+    },LOAD_WAIT_TIME);
+  });
+</script>
+</body>
+</html>
