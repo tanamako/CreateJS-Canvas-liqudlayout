@@ -3,8 +3,8 @@ var canvasLiquidlayout = (function () {
 
 	window.scrollTo(0,0);
   
-  var $wWidth = $(window).innerWidth(),
-      $wHeight = $(window).innerHeight(),
+  var wWidth = $(window).innerWidth(),
+      wHeight = $(window).innerHeight(),
       $header = $('.js-header'),
       $box      = $(".js-box"),
       $canvas         = $('#canvas'),
@@ -15,7 +15,7 @@ var canvasLiquidlayout = (function () {
 
   var lp_loading = (function(){
     var tutorialTop = 0;
-   	tutorialTop = ($wHeight - LOADING_HEIGHT - headerHeight)/2;
+   	tutorialTop = (wHeight - LOADING_HEIGHT - headerHeight)/2;
     $('.p-loading-tutorial').css('padding-top',tutorialTop);
   })();
 
@@ -52,16 +52,16 @@ var canvasLiquidlayout = (function () {
 
       var MOVIEWRAP_RATIO      = BASESTAGE_WIDTH/BASESTAGE_HEIGHT, 
           MOVIEWRAP_RATIO_MATH = Math.round(MOVIEWRAP_RATIO * 100),
-          nowRatio             = Math.round($wWidth / $wHeight * 100);
+          nowRatio             = Math.round( wWidth / wHeight * 100);
 
-      if($wWidth <= $wHeight && nowRatio <= MOVIEWRAP_RATIO_MATH){
+      if(wWidth <= wHeight && nowRatio <= MOVIEWRAP_RATIO_MATH){
         $canvas.css({
-          "width": $wWidth
+          "width": wWidth
         });
       }
-      if($wWidth <= $wHeight && nowRatio >= MOVIEWRAP_RATIO_MATH || $wWidth >= $wHeight){
+      if(wWidth <= wHeight && nowRatio >= MOVIEWRAP_RATIO_MATH || wWidth >= wHeight){
         $canvas.css({
-          "height": $wHeight - tutorialHeaderHeight
+          "height": wHeight - tutorialHeaderHeight
         });
       }
       $box.css({
